@@ -45,4 +45,19 @@ class WardrobeKataApplicationTests {
         assertEquals(236, Wardrobe.calculatePrice(new ArrayList<>(Arrays.asList(50, 50, 50, 50)), prices));
     }
 
+    @Test
+    void testFindCheapestCombinationFromCombinationsThatFitWall() {
+        List<List<Integer>> combinationsThatFit = Wardrobe.findCombinationsThatFit(Wardrobe.findAllCombinations
+                (new ArrayList<>(Arrays.asList(50, 75, 100, 120))), 250);
+
+        HashMap<Integer, Integer> prices = new HashMap<Integer, Integer>() {{
+            put(50, 59);
+            put(75, 62);
+            put(100, 90);
+            put(120, 111);
+        }};
+
+        assertEquals(new ArrayList<>(Arrays.asList(50, 50, 75, 75)), Wardrobe.findCheapestOption(combinationsThatFit, prices));
+
+    }
 }

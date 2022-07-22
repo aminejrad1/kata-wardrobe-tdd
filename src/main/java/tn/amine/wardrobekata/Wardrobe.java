@@ -38,4 +38,21 @@ public class Wardrobe {
 
         return total;
     }
+
+    public static List<Integer> findCheapestOption(List<List<Integer>> combinationsThatFit, HashMap<Integer, Integer> prices) {
+        int position = 0;
+        int minimum = calculatePrice(combinationsThatFit.get(0), prices);
+
+        for(int i=0; i<combinationsThatFit.size();i++){
+            int temp = calculatePrice(combinationsThatFit.get(i), prices);
+
+            if(temp<=minimum)
+            {
+                minimum = temp;
+                position = i;
+            }
+        }
+
+        return combinationsThatFit.get(position);
+    }
 }
