@@ -23,4 +23,8 @@ public class Wardrobe {
 
         return  total;
     }
+
+    public static List<List<Integer>> findCombinationsThatFit(List<List<Integer>> combinations, int length) {
+        return combinations.stream().filter(combination -> calculate(combination)==length).collect(Collectors.toList());
+    }
 }
