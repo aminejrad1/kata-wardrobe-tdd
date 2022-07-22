@@ -2,6 +2,8 @@ package tn.amine.wardrobekata;
 
 import org.paukov.combinatorics3.Generator;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,5 +28,14 @@ public class Wardrobe {
 
     public static List<List<Integer>> findCombinationsThatFit(List<List<Integer>> combinations, int length) {
         return combinations.stream().filter(combination -> calculate(combination)==length).collect(Collectors.toList());
+    }
+
+    public static int calculatePrice(List<Integer> combination, HashMap<Integer, Integer> prices) {
+        int total =0;
+        for(int longeur: combination) {
+            total += prices.get(longeur);
+        }
+
+        return total;
     }
 }
