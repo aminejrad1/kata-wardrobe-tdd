@@ -24,7 +24,7 @@ class WardrobeKataApplicationTests {
     @Test
     void testCalculateCombinationTotalLength() {
         List<Integer> combination = new ArrayList<>(Arrays.asList(50, 50, 50, 50));
-        assertEquals(200, Wardrobe.calculate(combination));
+        assertEquals(200, Wardrobe.combine(combination));
     }
 
     @Test
@@ -58,6 +58,5 @@ class WardrobeKataApplicationTests {
         }};
 
         assertEquals(new ArrayList<>(Arrays.asList(50, 50, 75, 75)), Wardrobe.findCheapestOption(combinationsThatFit, prices));
-
     }
 }
