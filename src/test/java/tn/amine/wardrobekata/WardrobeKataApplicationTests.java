@@ -9,6 +9,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 @SpringBootTest
 class WardrobeKataApplicationTests {
 
@@ -17,4 +18,11 @@ class WardrobeKataApplicationTests {
         List<Integer> lengths = new ArrayList<>(Arrays.asList(50, 75));
         assertEquals(3, Wardrobe.findAllCombinations(lengths).size());
     }
+
+    @Test
+    void testCalculateCombinationTotalLength() {
+        List<Integer> combination = new ArrayList<>(Arrays.asList(50, 50, 50, 50));
+        assertEquals(200, Wardrobe.calculate(combination));
+    }
+
 }

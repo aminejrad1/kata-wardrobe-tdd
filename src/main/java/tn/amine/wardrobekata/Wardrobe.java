@@ -12,4 +12,15 @@ public class Wardrobe {
                 .stream()
                 .collect(Collectors.toList());
     }
+
+
+    public static int calculate(List<Integer> combination) {
+        int total = 0;
+
+        for(int length: combination){
+            total += length;
+        }
+
+        return  total;
+    }
 }
